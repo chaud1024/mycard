@@ -19,7 +19,7 @@ const ListRow = ({
   onClick,
 }: ListRowProps) => {
   return (
-    <Flex as="li" css={listRowContainerStyles} onClick={onClick}>
+    <Flex as="li" css={listRowContainerStyles} onClick={onClick} align="center">
       <Flex css={listRowLeftStyles}>{left}</Flex>
       <Flex css={listRowContentStyles}>{contents}</Flex>
       <Flex>{right}</Flex>
