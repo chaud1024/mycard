@@ -1,3 +1,4 @@
+import FixedBottomButton from '@/components/shared/FixedBottomButton'
 import ListRow from '@/components/shared/ListRow'
 import { getCard } from '@remote/card'
 import Top from '@shared/Top'
@@ -33,6 +34,7 @@ const CardPage = () => {
           />
         ))}
       </ul>
+      <FixedBottomButton label="신청하기" onClick={() => {}} />
     </div>
   )
 }
