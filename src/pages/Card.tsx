@@ -1,12 +1,14 @@
 import { css } from '@emotion/react'
 import { getCard } from '@remote/card'
+import { motion } from 'framer-motion'
+import { useQuery } from 'react-query'
+import { useParams } from 'react-router-dom'
+
 import FixedBottomButton from '@shared/FixedBottomButton'
 import Flex from '@shared/Flex'
 import ListRow from '@shared/ListRow'
 import Text from '@shared/Text'
 import Top from '@shared/Top'
-import { useQuery } from 'react-query'
-import { useParams } from 'react-router-dom'
 
 const CardPage = () => {
   const { id = '' } = useParams()
@@ -26,17 +28,32 @@ const CardPage = () => {
   return (
     <div>
       <Top title={`${corpName} ${name}`} subTitle={subTitle} />
+
       <ul>
         {benefit.map((text, index) => (
-          <ListRow
+          <motion.li
+            initial={{ opacity: 0, translateX: -90 }}
+            transition={{
+              duration: 0.65,
+              // ease: [0.25, 0.1, 0.25, 0.1],
+              ease: 'easeInOut',
+              delay: index * 0.1,
+            }}
+            whileInView={{ opacity: 1, translateX: 0 }}
+            // animate={{ opacity: 1, translateX: 0 }}
             key={text}
-            left={<IconCheck />}
-            contents={
-              <ListRow.Texts title={`혜택 ${index + 1}`} subTitle={text} />
-            }
-          />
+          >
+            <ListRow
+              as="div"
+              left={<IconCheck />}
+              contents={
+                <ListRow.Texts title={`혜택 ${index + 1}`} subTitle={text} />
+              }
+            />
+          </motion.li>
         ))}
       </ul>
+
       {promotion != null ? (
         <Flex direction="column" css={termsContainerStyles}>
           <Text bold={true}>유의사항</Text>
