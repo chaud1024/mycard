@@ -36,7 +36,7 @@ export async function getCards(pageParam?: QuerySnapshot<Card>) {
   return { items, lastVisible }
 }
 
-export const getCard = async (id: string) => {
+export async function getCard(id: string) {
   const snapshot = await getDoc(doc(store, COLLECTIONS.CARD, id))
 
   return {
