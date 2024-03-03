@@ -19,8 +19,8 @@ const AdBanners = () => {
     <Container>
       <Swiper spaceBetween={8}>
         {data?.map((banner) => (
-          <SwiperSlide>
-            <Link to={banner.id} key={banner.id}>
+          <SwiperSlide key={banner.id}>
+            <Link to={banner.id}>
               <Flex direction="column" css={bannerContainerStyles}>
                 <Text bold={true}>{banner.title}</Text>
                 <Text typography="t7">{banner.description}</Text>
