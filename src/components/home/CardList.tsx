@@ -2,9 +2,16 @@ import { getCards } from '@/remote/card'
 import { useInfiniteQuery } from 'react-query'
 import { flatten } from 'lodash'
 import ListRow from '@shared/ListRow'
+import InfiniteScroll from 'react-infinite-scroll-component'
+import { useCallback } from 'react'
 
 const CardList = () => {
-  const { data, hasNextPage, fetchNextPage } = useInfiniteQuery(
+  const {
+    data,
+    hasNextPage = false,
+    fetchNextPage,
+    isFetching,
+  } = useInfiniteQuery(
     ['card'],
     ({ pageParam }) => {
       return getCards(pageParam)
@@ -16,7 +23,12 @@ const CardList = () => {
     },
   )
 
-  console.log('data', data)
+  const loadMore = useCallback(() => {
+    if (hasNextPage === false || isFetching) {
+      return
+    }
+    fetchNextPage()
+  }, [hasNextPage, fetchNextPage, isFetching])
 
   if (data == null) {
     return null
@@ -26,8 +38,12 @@ const CardList = () => {
 
   return (
     <div>
-      <button onClick={() => fetchNextPage()}>데이터 불러오기</button>
-      <ul>
+      <InfiniteScroll
+        dataLength={cards.length}
+        hasMore={hasNextPage}
+        loader={<></>}
+        next={loadMore}
+      >
         {cards.map((card, index) => {
           return (
             <ListRow
@@ -40,7 +56,7 @@ const CardList = () => {
             />
           )
         })}
-      </ul>
+      </InfiniteScroll>
     </div>
   )
 }
