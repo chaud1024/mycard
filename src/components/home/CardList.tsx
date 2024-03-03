@@ -46,18 +46,23 @@ const CardList = () => {
         next={loadMore}
         scrollThreshold="100px"
       >
-        {cards.map((card, index) => {
-          return (
-            <ListRow
-              key={card.id}
-              contents={
-                <ListRow.Texts title={`${index + 1}위`} subTitle={card.name} />
-              }
-              right={card.payback && <Badge label={card.payback} />}
-              withArrow={true}
-            />
-          )
-        })}
+        <ul>
+          {cards.map((card, index) => {
+            return (
+              <ListRow
+                key={card.id}
+                contents={
+                  <ListRow.Texts
+                    title={`${index + 1}위`}
+                    subTitle={card.name}
+                  />
+                }
+                right={card.payback && <Badge label={card.payback} />}
+                withArrow={true}
+              />
+            )
+          })}
+        </ul>
       </InfiniteScroll>
     </div>
   )
