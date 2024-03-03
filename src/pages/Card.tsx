@@ -1,6 +1,9 @@
-import FixedBottomButton from '@/components/shared/FixedBottomButton'
-import ListRow from '@/components/shared/ListRow'
+import { css } from '@emotion/react'
 import { getCard } from '@remote/card'
+import FixedBottomButton from '@shared/FixedBottomButton'
+import Flex from '@shared/Flex'
+import ListRow from '@shared/ListRow'
+import Text from '@shared/Text'
 import Top from '@shared/Top'
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
@@ -34,6 +37,12 @@ const CardPage = () => {
           />
         ))}
       </ul>
+      {promotion != null ? (
+        <Flex direction="column" css={termsContainerStyles}>
+          <Text bold={true}>유의사항</Text>
+          <Text typography="t7">{removeHtmlTags(promotion.terms)}</Text>
+        </Flex>
+      ) : null}
       <FixedBottomButton label="신청하기" onClick={() => {}} />
     </div>
   )
@@ -83,5 +92,10 @@ function removeHtmlTags(text: string) {
   }
   return output
 }
+
+const termsContainerStyles = css`
+  margin-top: 80px;
+  padding: 0 24px 80px;
+`
 
 export default CardPage
