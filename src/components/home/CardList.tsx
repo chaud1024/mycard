@@ -4,6 +4,7 @@ import { flatten } from 'lodash'
 import { useCallback } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useInfiniteQuery } from 'react-query'
+import { useNavigate } from 'react-router-dom'
 import Badge from '../shared/Badge'
 
 const CardList = () => {
@@ -23,6 +24,8 @@ const CardList = () => {
       },
     },
   )
+
+  const navigate = useNavigate()
 
   const loadMore = useCallback(() => {
     if (hasNextPage === false || isFetching) {
@@ -59,6 +62,7 @@ const CardList = () => {
                 }
                 right={card.payback && <Badge label={card.payback} />}
                 withArrow={true}
+                onClick={() => navigate(`/card/${card.id}`)}
               />
             )
           })}
