@@ -1,9 +1,9 @@
 import { getCards } from '@/remote/card'
-import { useInfiniteQuery } from 'react-query'
-import { flatten } from 'lodash'
 import ListRow from '@shared/ListRow'
-import InfiniteScroll from 'react-infinite-scroll-component'
+import { flatten } from 'lodash'
 import { useCallback } from 'react'
+import InfiniteScroll from 'react-infinite-scroll-component'
+import { useInfiniteQuery } from 'react-query'
 import Badge from '../shared/Badge'
 
 const CardList = () => {
@@ -44,6 +44,7 @@ const CardList = () => {
         hasMore={hasNextPage}
         loader={<></>}
         next={loadMore}
+        scrollThreshold="100px"
       >
         {cards.map((card, index) => {
           return (
