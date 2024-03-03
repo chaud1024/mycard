@@ -4,6 +4,7 @@ import { flatten } from 'lodash'
 import ListRow from '@shared/ListRow'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useCallback } from 'react'
+import Badge from '../shared/Badge'
 
 const CardList = () => {
   const {
@@ -51,7 +52,7 @@ const CardList = () => {
               contents={
                 <ListRow.Texts title={`${index + 1}위`} subTitle={card.name} />
               }
-              right={card.payback && <div>{card.payback}</div>}
+              right={card.payback && <Badge label={card.payback} />}
               withArrow={true}
             />
           )
