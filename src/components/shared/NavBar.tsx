@@ -1,21 +1,38 @@
-import { colors } from '@/styles/colorPalette'
 import { css } from '@emotion/react'
+import useUser from '@hooks/auth/useUser'
 import Button from '@shared/Button'
 import Flex from '@shared/Flex'
+import { colors } from '@styles/colorPalette'
+import { useCallback } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const NavBar = () => {
   const location = useLocation()
   const showSignButton =
     ['/signup', 'signin'].includes(location.pathname) === false
-  return (
-    <Flex align="center" justify="space-between" css={navbarContainerStyles}>
-      <Link to="/">홈</Link>
-      {showSignButton ? (
+
+  const user = useUser()
+
+  const renderButton = useCallback(() => {
+    if (user != null) {
+      return <Button>로그아웃</Button>
+    }
+
+    if (showSignButton) {
+      return (
         <Link to="/signin">
           <Button>회원가입/로그인</Button>
         </Link>
-      ) : null}
+      )
+    }
+
+    return null
+  }, [user, showSignButton])
+
+  return (
+    <Flex align="center" justify="space-between" css={navbarContainerStyles}>
+      <Link to="/">홈</Link>
+      {renderButton()}
     </Flex>
   )
 }
