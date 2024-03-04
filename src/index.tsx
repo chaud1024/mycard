@@ -8,6 +8,7 @@ import './index.css'
 import reportWebVitals from './reportWebVitals'
 import globalStyles from './styles/globalStyles'
 
+import AuthGuard from '@components/auth/AuthGuard'
 import { AlertContextProvider } from '@contexts/AlertContext'
 
 const client = new QueryClient({
@@ -20,7 +21,9 @@ root.render(
     <Global styles={globalStyles} />
     <QueryClientProvider client={client}>
       <AlertContextProvider>
-        <App />
+        <AuthGuard>
+          <App />
+        </AuthGuard>
       </AlertContextProvider>
     </QueryClientProvider>
   </React.StrictMode>,
