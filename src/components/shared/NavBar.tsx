@@ -12,7 +12,7 @@ const NavBar = () => {
     <Flex align="center" justify="space-between" css={navbarContainerStyles}>
       <Link to="/">홈</Link>
       {showSignButton ? (
-        <Link to="/signup">
+        <Link to="/signin">
           <Button>회원가입/로그인</Button>
         </Link>
       ) : null}
