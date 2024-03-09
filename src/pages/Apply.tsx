@@ -1,33 +1,14 @@
-import BasicInfo from '@components/apply/BasicInfo'
-import CardInfo from '@components/apply/CardInfo'
-import Terms from '@components/apply/Terms'
-import { ApplyValues } from '@models/apply'
+import Apply from '@components/apply'
 import { useState } from 'react'
 
 const ApplyPage = () => {
   const [step, setStep] = useState(2)
 
-  const handleTermsChange = (terms: ApplyValues['terms']) => {
-    console.log('terms', terms)
-  }
-  const handleBasicInfoChange = (
-    infoValues: Pick<ApplyValues, 'salary' | 'creditScore' | 'payDate'>,
-  ) => {
-    console.log('infoValues', infoValues)
+  const handleSubmit = () => {
+    // TODO: 카드신청
   }
 
-  const handleCardInfoChange = (
-    cardInfoValues: Pick<ApplyValues, 'isMaster' | 'isHipass' | 'isRf'>,
-  ) => {
-    console.log('cardInfoValues', cardInfoValues)
-  }
-  return (
-    <div>
-      {step === 0 ? <Terms onNext={handleTermsChange} /> : null}
-      {step === 1 ? <BasicInfo onNext={handleBasicInfoChange} /> : null}
-      {step === 2 ? <CardInfo onNext={handleCardInfoChange} /> : null}
-    </div>
-  )
+  return <Apply step={step} onSubmit={handleSubmit} />
 }
 
 export default ApplyPage
