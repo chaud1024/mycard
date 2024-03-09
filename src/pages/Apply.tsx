@@ -1,11 +1,11 @@
-import { ApplyValues } from '@models/apply'
 import BasicInfo from '@components/apply/BasicInfo'
 import CardInfo from '@components/apply/CardInfo'
 import Terms from '@components/apply/Terms'
+import { ApplyValues } from '@models/apply'
 import { useState } from 'react'
 
 const ApplyPage = () => {
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(2)
 
   const handleTermsChange = (terms: ApplyValues['terms']) => {
     console.log('terms', terms)
