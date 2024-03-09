@@ -13,13 +13,19 @@ const ApplyPage = () => {
   const handleBasicInfoChange = (
     infoValues: Pick<ApplyValues, 'salary' | 'creditScore' | 'payDate'>,
   ) => {
-    console.log('terms', infoValues)
+    console.log('infoValues', infoValues)
+  }
+
+  const handleCardInfoChange = (
+    cardInfoValues: Pick<ApplyValues, 'isMaster' | 'isHipass' | 'isRf'>,
+  ) => {
+    console.log('cardInfoValues', cardInfoValues)
   }
   return (
     <div>
       {step === 0 ? <Terms onNext={handleTermsChange} /> : null}
       {step === 1 ? <BasicInfo onNext={handleBasicInfoChange} /> : null}
-      {step === 2 ? <CardInfo /> : null}
+      {step === 2 ? <CardInfo onNext={handleCardInfoChange} /> : null}
     </div>
   )
 }
