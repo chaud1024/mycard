@@ -57,7 +57,6 @@ function ButtonGroup({
     <Flex direction="column">
       {title != null ? (
         <>
-          <Spacing size={8} />
           <Text typography="t6" bold={true}>
             {title}
           </Text>
