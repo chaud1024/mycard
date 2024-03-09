@@ -4,7 +4,7 @@ import Terms from '@components/apply/Terms'
 import { useState } from 'react'
 
 const ApplyPage = () => {
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(1)
 
   const handleTermsChange = (terms: string[]) => {
     console.log('terms', terms)
