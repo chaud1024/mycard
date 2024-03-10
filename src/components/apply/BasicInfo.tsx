@@ -30,8 +30,6 @@ const BasicInfo = ({
     (value) => value,
   )
 
-  console.log(모든정보가선택되었는가)
-
   return (
     <div>
       <Select
