@@ -9,6 +9,7 @@ import ApplyPage from '@pages/Apply'
 import ScrollToTop from '@shared/ScrollToTop'
 import NavBar from '@components/shared/NavBar'
 import PrivateRoute from '@components/auth/PrivateRoute'
+import ApplyDone from '@pages/ApplyDone'
 
 const App = () => {
   return (
@@ -25,6 +26,14 @@ const App = () => {
           element={
             <PrivateRoute>
               <ApplyPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/apply/done"
+          element={
+            <PrivateRoute>
+              <ApplyDone />
             </PrivateRoute>
           }
         />
