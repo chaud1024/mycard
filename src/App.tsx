@@ -10,6 +10,7 @@ import Home from '@pages/Home'
 import SigninPage from '@pages/Signin'
 import SignupPage from '@pages/Signup'
 import Test from '@pages/Test'
+import MyPage from '@pages/My'
 import ScrollToTop from '@shared/ScrollToTop'
 
 const App = () => {
@@ -37,6 +38,14 @@ const App = () => {
           element={
             <PrivateRoute>
               <ApplyDone />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/my"
+          element={
+            <PrivateRoute>
+              <MyPage />
             </PrivateRoute>
           }
         />
