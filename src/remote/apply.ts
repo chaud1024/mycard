@@ -35,3 +35,28 @@ export async function updateApplyCard({
 
   updateDoc(applied.ref, applyValues)
 }
+
+// 사용자가 해당 카드를 신청했는지 여부
+export async function getAppliedCard({
+  userId,
+  cardId,
+}: {
+  userId: string
+  cardId: string
+}) {
+  const snapshot = await getDocs(
+    query(
+      collection(store, COLLECTIONS.CARD_APPLY),
+      where('userId', '==', userId),
+      where('cardId', '==', cardId),
+    ),
+  )
+
+  if (snapshot.docs.length === 0) {
+    return null
+  }
+
+  const [applied] = snapshot.docs
+
+  return applied.data() as ApplyValues
+}
