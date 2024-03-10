@@ -6,6 +6,13 @@ export interface Term {
   title: string
 }
 
+export const APPLY_STATUS = {
+  READY: 'READY',
+  PROGRESS: 'PROGRESS',
+  COMPLETE: 'COMPLETE',
+  REJECT: 'REJECT',
+} as const
+
 // 카드신청한 데이터들 모으기
 // 어느 유저가 어느 약관을 동의했으며 언제 어떤 카드를 신청했는지
 export interface ApplyValues {
@@ -19,6 +26,7 @@ export interface ApplyValues {
   isMaster: boolean
   isHipass: boolean
   isRf: boolean
+  status: keyof typeof APPLY_STATUS
 }
 
 export interface Option {
