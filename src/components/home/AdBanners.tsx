@@ -13,7 +13,17 @@ import Text from '../shared/Text'
 import 'swiper/css'
 
 const AdBanners = () => {
-  const { data } = useQuery(['adBanners'], () => getAdBanners())
+  const { data, isLoading } = useQuery(['adBanners'], () => getAdBanners())
+
+  if (data == null || isLoading) {
+    return (
+      <Container>
+        <Text>&nbsp;</Text>
+        <Text>&nbsp;</Text>
+      </Container>
+    )
+  }
+
   return (
     <Container>
       <Swiper spaceBetween={8}>
