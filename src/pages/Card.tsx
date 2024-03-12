@@ -5,6 +5,8 @@ import { useCallback } from 'react'
 import { useQuery } from 'react-query'
 import { useNavigate, useParams } from 'react-router-dom'
 
+import Review from '@components/card/Review'
+import Spacing from '@components/shared/Spacing'
 import { useAlertContext } from '@contexts/AlertContext'
 import useUser from '@hooks/auth/useUser'
 import FixedBottomButton from '@shared/FixedBottomButton'
@@ -81,6 +83,13 @@ const CardPage = () => {
           <Text typography="t7">{removeHtmlTags(promotion.terms)}</Text>
         </Flex>
       ) : null}
+
+      <Spacing size={100} />
+
+      <Review />
+
+      <Spacing size={100} />
+
       <FixedBottomButton
         label="1분만에 신청하고 혜택받기"
         onClick={moveToApply}
