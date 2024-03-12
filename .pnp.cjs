@@ -60,6 +60,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:18.2.0"],\
           ["react-infinite-scroll-component", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:6.1.0"],\
+          ["react-intersection-observer", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:9.8.1"],\
           ["react-query", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:3.39.3"],\
           ["react-router-dom", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:6.22.2"],\
           ["react-scripts", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:5.0.1"],\
@@ -14516,6 +14517,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:18.2.0"],\
           ["react-infinite-scroll-component", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:6.1.0"],\
+          ["react-intersection-observer", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:9.8.1"],\
           ["react-query", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:3.39.3"],\
           ["react-router-dom", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:6.22.2"],\
           ["react-scripts", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:5.0.1"],\
@@ -17344,6 +17346,32 @@ const RAW_RUNTIME_STATE =
         ],\
         "packagePeers": [\
           "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["react-intersection-observer", [\
+      ["npm:9.8.1", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/react-intersection-observer-npm-9.8.1-185e9745d2-10c0.zip/node_modules/react-intersection-observer/",\
+        "packageDependencies": [\
+          ["react-intersection-observer", "npm:9.8.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:9.8.1", {\
+        "packageLocation": "./.yarn/__virtual__/react-intersection-observer-virtual-8efd74b9f2/4/AppData/Local/Yarn/Berry/cache/react-intersection-observer-npm-9.8.1-185e9745d2-10c0.zip/node_modules/react-intersection-observer/",\
+        "packageDependencies": [\
+          ["react-intersection-observer", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:9.8.1"],\
+          ["@types/react", "npm:18.2.61"],\
+          ["@types/react-dom", "npm:18.2.19"],\
+          ["react", "npm:18.2.0"],\
+          ["react-dom", "virtual:bd7ec0158a65c7fa063ee33ec2a8cb7093d2d4f25bf652862fe1b6423ee803e85ca226a8c61c931f3629f0b573f585c0247f8455f54ba9910f3b62b69cf6016c#npm:18.2.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
           "react"\
         ],\
         "linkType": "HARD"\
